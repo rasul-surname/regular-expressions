@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+	<title>Регулярные выражения</title>
+</head>
+
+<body>
+	<div class="container-sm">
+		<h1 class="text-center mb-5">Практика регулярных выражений</h1>
+		<div class="block">
+			<p class="lead">Поиск информации по Базе Данных</p>
+				<div class="form-group mb-2">
+					<input type="text" id="search-text" class="form-control" placeholder="Введите запрос" onkeyup="tableSearch()">
+				</div>
+				<div class="form-group mb-4">
+					<table class="table table-bordered border-primary" id="table">
+						<tr>
+							<th>№</th>
+							<th>Фамилия</th>
+							<th>Имя</th>
+							<th>Отчество</th>
+							<th>Улица</th>
+							<th>Номер</th>
+						</tr>
+						<tr>
+							<td>1</td>
+							<td>Волков</td>
+							<td>Артём</td>
+							<td>Павлович</td>
+							<td>Кирова 36</td>
+							<td>+7(988)-444-66-55</td>
+						</tr>
+						<tr>
+							<td>2</td>
+							<td>Морозов</td>
+							<td>Иван</td>
+							<td>Николаевич</td>
+							<td>Калинина 24</td>
+							<td>+7(963)-420-20-40</td>
+						</tr>
+						<tr>
+							<td>3</td>
+							<td>Харламов</td>
+							<td>Виктор</td>
+							<td>Олегович</td>
+							<td>Зарянова 18</td>
+							<td>+7(928)-777-28-28</td>
+						</tr>
+					</table> 
+				</div>
+				<p class="lead">Преобразование camelCase в обчный текст</p>
+				<div class="form-group mb-2">
+					<input type="text" id="camelCase" class="form-control" placeholder="Введите текст в формате camelCase"/>
+				</div>
+				<div class="form-group mb-5">
+					<button id="btn" onclick="changes()" class="btn btn-default btn-primary form-control">Отправить</button>
+				</div>
+				<p class="lead">Удаление лишних пробелов в строке</p>
+				<div class="form-group mb-2">
+					<input type="text" id="text" class="form-control" placeholder="Введите текст с множеством пробелов"/>
+				</div>
+				<div class="form-group mb-5">
+					<button id="btn" onclick="del()" class="btn btn-default btn-primary form-control">Отправить</button>
+				</div>
+				<p class="lead">Проверка e-mail на валидность</p>
+				<div class="form-group mb-2">
+					<input type="login" id="login" class="form-control" placeholder="Введите ваш e-mail"/>
+				</div>
+				<div class="form-group mb-5">
+					<button id="btn" onclick="check()" class="btn btn-default btn-primary form-control">Отправить</button>
+				</div>
+				<p class="lead">Проверка принадлежности номера Российскому региону</p>
+				<div class="form-group mb-2">
+					<input type="tel" id="tel" class="form-control" placeholder="Введите ваш номер телефона"/>
+				</div>
+				<div class="form-group mb-4">
+					<button id="btn" onclick="checkPhone()" class="btn btn-default btn-primary form-control">Отправить</button>
+				</div>
+				<p class="lead">Проверка на наличие данных перед отправкой</p>
+				<div class="form-group mb-2">
+					<input type="text" id="text-empty" class="form-control" placeholder="Введите данные"/>
+				</div>
+				<div class="form-group mb-4">
+					<button id="btn" onclick="checkEmpty()" class="btn btn-default btn-primary form-control">Отправить</button>
+				</div>
+				<p class="lead">Проверка наличия символов-слов в тексте</p>
+				<div class="form-group mb-2">
+					<input type="text" id="word" class="form-control" placeholder="Введите любые символы-слова"/>
+				</div>
+				<div class="form-group mb-2">
+					<p id="big-text">
+						Чтоб считал компьютер быстро,
+						Правила чтоб не забыл,
+						Потрудился программист тут,
+						Он программу сочинил.
+						Перед ним клавиатура,
+						Мягко светится экран.
+						На экране же — фигуры,
+						Текст, таблица, схема, план.
+						Программист программы пишет,
+						Чтоб компьютер мог затем
+						Поиграть с любым мальчишкой,
+						Тысячи решить проблем.
+						И программу за программой
+						Программисты создают,
+						Чтобы вашим папам, мамам
+						Облегчил компьютер труд!
+					</p>
+				</div>
+				<div class="form-group mb-4">
+					<button id="btn" onclick="checkWord()" class="btn btn-default btn-primary form-control">Проверить наличие</button>
+				</div>
+		</div>
+	</div>
+	<script src="main.js"></script>
+</body>
+
+</html>
