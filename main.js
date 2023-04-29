@@ -52,7 +52,7 @@ function check() {
 
 function checkPhone() {
 	let tel = document.getElementById('tel');
-	let regular = /^((\+?7|8)[ \-] ?)?((\(\d{3}\))|(\d{3}))?([ \-])?(\d{3}[\- ]?\d{2}[\- ]?\d{2})$/;
+	let regular = /^(\+7|7|8)?[\s\-]?\(?[489][0-9]{2}\)?[\s\-]?[0-9]{3}[\s\-]?[0-9]{2}[\s\-]?[0-9]{2}$/;
 	let phrase = tel.value;
 	if(regular.test(phrase)) {
 		alert('Номер принадлежит Российскому региону');	
